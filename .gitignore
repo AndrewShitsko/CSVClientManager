@@ -1,0 +1,6 @@
+.idea/artifacts/
+.idea/libraries/
+build/
+out/
+.idea/
+grails-app/conf/application.yml
