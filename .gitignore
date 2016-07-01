@@ -3,4 +3,3 @@
 build/
 out/
 .idea/
-grails-app/conf/application.yml
