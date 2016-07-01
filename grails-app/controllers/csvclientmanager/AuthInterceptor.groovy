@@ -4,7 +4,9 @@ package csvclientmanager
 class AuthInterceptor {
 
     AuthInterceptor() {
-        match(controller: "client")
+        matchAll().excludes(controller: "user", action: "login")
+                  .excludes(controller: "user", action: "authenticate")
+                  .excludes(controller: "user", action: "logout")
     }
 
     boolean before() {

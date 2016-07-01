@@ -31,8 +31,4 @@ class User {
     def beforeUpdate = {
         beforeInsert()
     }
-
-    String toString() {
-        login
-    }
 }

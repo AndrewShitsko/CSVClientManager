@@ -41,6 +41,12 @@ body {
     box-shadow: 0 0 0.3em #4D8618;
 }
 
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 #grailsLogo {
     background-color: #abbf78;
 }
@@ -445,8 +451,8 @@ th.desc a {
     background: #ffffff;
 }
 
-th:hover, tr:hover {
-    background: #79b94c;
+tr:hover {
+    background: #eee;
 }
 
 /* PAGINATION */
@@ -537,7 +543,7 @@ th:hover, tr:hover {
     text-decoration: underline;
 }
 
-.buttons .delete, .buttons .edit, .buttons .save {
+.buttons .create, .buttons .delete, .buttons .edit, .buttons .save {
     background-position: 0.7em center;
     background-repeat: no-repeat;
     text-indent: 25px;
@@ -546,6 +552,10 @@ th:hover, tr:hover {
 .buttons .login {
     background-position: 0.7em center;
     background-repeat: no-repeat;
+}
+
+.buttons .create {
+    background-image: url(../images/skin/database_add.png);
 }
 
 .buttons .delete {
@@ -576,4 +586,9 @@ a.skip {
 img.grails-logo {
     height:340px;
     margin-top:-10px;
+}
+
+#map {
+    width: 100%;
+    height: 600px;
 }

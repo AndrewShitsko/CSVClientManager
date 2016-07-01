@@ -1,17 +1,39 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
     <meta name="layout" content="main"/>
-    <title>Welcome to CSV Client Manager</title>
-
-    <asset:link rel="icon" href="favicon.ico" type="image/x-ico" />
+    <g:set var="entityName" value="${message(code: 'client.label', default: 'Client')}"/>
+    <title><g:message code="default.list.label" args="[entityName]"/></title>
 </head>
+
 <body>
-    <div id="content" role="main">
-        <section class="row colset-2-its">
+<a href="#list-client" class="skip" tabindex="-1"><g:message code="default.link.skip.label"
+                                                             default="Skip to content&hellip;"/></a>
 
-        </section>
+<div id="list-client" class="content scaffold-list" role="main">
+    <g:if test="${flash.message}">
+        <div class="message" role="status">${flash.message}</div>
+    </g:if>
+    <g:form action="search" class="form-inline">
+        <div class="form-group">
+            <h1><g:message code="default.list.label" args="[entityName]"/></h1>
+        </div>
+
+        <div class="pull-right">
+            <div class="input-group">
+                <input type="text" id="inputSearch" name="q" class="form-control" placeholder="Search for..."/>
+
+                <div class="input-group-btn">
+                    <g:submitButton name="buttonSearch" class="btn btn-default" value="Search"/>
+                </div>
+            </div>
+        </div>
+    </g:form>
+    <f:table collection="${clientList}" properties="['name', 'email', 'street', 'zip']"/>
+
+    <div class="pagination">
+        <g:paginate total="${clientCount ?: 0}"/>
     </div>
-
+</div>
 </body>
 </html>

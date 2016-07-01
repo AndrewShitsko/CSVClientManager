@@ -10,10 +10,6 @@ class AdminInterceptor {
     }
 
     boolean before() {
-        if (!session.user) {
-            redirect(controller: "user", action: "login")
-            return false
-        }
         if (!session?.user?.admin) {
             flash.message = "Sorry, admin only"
             redirect(controller: "client")
